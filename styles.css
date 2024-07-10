@@ -1,0 +1,149 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-position: center;
+    
+}
+
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-image: url('leaf1.jpg');
+    background-size: cover;
+    background-attachment: fixed; /* Parallax effect */
+    color: #e8e8e8;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for header */
+}
+
+header h1 {
+    margin: 0;
+    transition: color 0.3s ease, transform 0.3s ease; /* Animation for header text */
+}
+
+header h1:hover {
+    color: #f39c12; /* Hover effect for header text */
+    transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 15px;
+    transition: transform 0.3s ease, background 0.3s ease; /* Animation for navigation items */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    transition: color 0.3s ease, background 0.3s ease; /* Animation for navigation links */
+    border-radius: 5px; /* Rounded corners */
+}
+
+nav ul li a:hover {
+    color: #fff; /* Keep the text color white on hover */
+    background: #f39c12; /* Background color change on hover */
+}
+
+nav ul li:hover {
+    transform: translateY(-5px); /* Hover effect to lift navigation items */
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1em;
+    z-index: 1;
+    position: relative;
+}
+
+section {
+    flex: 2;
+    padding: 1em;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    transition: background 0.3s ease, transform 0.3s ease; /* Animation for section background */
+    border-radius: 15px;
+    color: #e8e8e8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for section */
+}
+
+section:hover {
+    background: #000000; /* Hover effect for section */
+    transform: scale(1.02); /* Slight scale effect on hover */
+}
+
+aside {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+    padding: 1em;
+    margin-left: 1em;
+    transition: background 0.3s ease, transform 0.3s ease; /* Animation for aside background */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for aside */
+    color: #333;
+}
+
+aside:hover {
+    background: #fff; /* Hover effect for aside */
+    transform: scale(1.02); /* Slight scale effect on hover */
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+    bottom: -555px;
+    width: 100%;
+    transition: background 0.3s ease; /* Animation for footer background */
+}
+
+footer:hover {
+    background: #444; /* Hover effect for footer */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    aside {
+        margin-left: 0;
+        margin-top: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    section, aside {
+        padding: 0.5em;
+    }
+}

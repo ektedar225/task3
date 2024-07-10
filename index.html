@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            background: url('OIP.jpg');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-position: center;
+        }
+
+        .form-container {
+            width: 90%;
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid rgba(204, 204, 204, 0.5);
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            font-color:black;
+        }
+
+        .form-container label {
+            font-weight: bold;
+            color: #000;
+        }
+
+        .form-container input[type=text],
+        .form-container input[type=email],
+        .form-container input[type=password] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px 0;
+            border: 1px solid rgba(204, 204, 204, 0.5);
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #000;
+        }
+
+        .form-container input[type=submit] {
+            background-color: #032a05;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .form-container input[type=submit]:hover {
+            background-color: #25f730;
+        }
+
+        .form-container .register-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #000;
+        }
+        
+
+        @media (min-width: 768px) {
+            .form-container {
+                max-width: 500px;
+            }
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            if (email.trim() == '') {
+                alert("Please enter your email");
+                return false;
+            }
+            if (password.trim() == '') {
+                alert("Please enter your password");
+                return false;
+            }
+            return true;
+        }
+
+        function validateRegisterForm() {
+            var name = document.getElementById('reg_name').value;
+            var email = document.getElementById('reg_email').value;
+            var password = document.getElementById('reg_password').value;
+
+            if (name.trim() == '') {
+                alert("Please enter your name");
+                return false;
+            }
+            if (email.trim() == '') {
+                alert("Please enter your email");
+                return false;
+            }
+            if (password.trim() == '') {
+                alert("Please enter your password");
+                return false;
+            }
+            if (password.trim() == '') {
+                alert("Please enter your password");
+                return false;
+            return true;
+        }
+    }
+
+        function toggleForms() {
+            const loginForm = document.querySelectorAll('.form-container')[0];
+            const registerForm = document.querySelectorAll('.form-container')[1];
+
+            loginForm.style.display = loginForm.style.display === 'none' ? 'block' : 'none';
+            registerForm.style.display = registerForm.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Login</h2>
+        <form action="login.html" method="post" onsubmit="return validateForm()">
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br>
+
+            <input type="submit" value="Login">
+        </form>
+        <a href="#" class="register-link" onclick="toggleForms()">Don't have an account? Register</a>
+    </div>
+
+    <div class="form-container" style="display: none;">
+        <h2>Register</h2>
+        <form action="register.php" method="post" onsubmit="return validateRegisterForm()">
+            <label for="reg_name">Name:</label><br>
+            <input type="text" id="reg_name" name="name" required><br>
+
+            <label for="reg_email">Email:</label><br>
+            <input type="email" id="reg_email" name="email" required><br>
+
+            <label for="reg_password">Password:</label><br>
+            <input type="password" id="reg_password" name="password" required><br>
+
+            <input type="submit" value="Register">
+        </form>
+        <a href="#" class="register-link" onclick="toggleForms()">Already have an account? Login</a>
+    </div>
+</body>
+
+</html>
